@@ -1,0 +1,5 @@
+C:\food-ordering-system\infrastructure\kafka\kafka-producer\src\main\java\com\food\ordering\system\kafka\producer\KafkaProducerConfig.java
+C:\food-ordering-system\infrastructure\kafka\kafka-producer\src\main\java\com\food\ordering\system\kafka\producer\service\KafkaProducer.java
+C:\food-ordering-system\infrastructure\kafka\kafka-producer\src\main\java\com\food\ordering\system\kafka\producer\exception\KafkaProducerException.java
+C:\food-ordering-system\infrastructure\kafka\kafka-producer\src\main\java\com\food\ordering\system\kafka\producer\service\impl\KafkaProducerImpl.java
+C:\food-ordering-system\infrastructure\kafka\kafka-producer\src\main\java\com\food\ordering\system\kafka\producer\KafkaMessageHelper.java

@@ -21,10 +21,7 @@ public class Order extends AggregateRoot<OrderId> {
     private OrderStatus orderStatus;
     private List<String> failureMessages;
 
-
-    public static Builder builder() {
-        return new Builder();
-    }
+    public static final String FAILURE_MESSAGE_DELIMITER = ",";
 
     public void initializeOrder() {
         setId(new OrderId(UUID.randomUUID()));
@@ -33,7 +30,7 @@ public class Order extends AggregateRoot<OrderId> {
         initializeOrderItems();
     }
 
-    public void validateOrder(){
+    public void validateOrder() {
         validateInitialOrder();
         validateTotalPrice();
         validateItemsPrice();
@@ -78,9 +75,15 @@ public class Order extends AggregateRoot<OrderId> {
         }
     }
 
+    private void validateInitialOrder() {
+        if (orderStatus != null || getId() != null) {
+            throw new OrderDomainException("Order is not in correct state for initialization!");
+        }
+    }
+
     private void validateTotalPrice() {
         if (price == null || !price.isGreaterThanZero()) {
-            throw new OrderDomainException("total price must be greater than 0!")
+            throw new OrderDomainException("Total price must be greater than zero!");
         }
     }
 
@@ -92,7 +95,7 @@ public class Order extends AggregateRoot<OrderId> {
 
         if (!price.equals(orderItemsTotal)) {
             throw new OrderDomainException("Total price: " + price.getAmount()
-                    + " is not equal to Order items total: " + orderItemsTotal.getAmount() + "!");
+                + " is not equal to Order items total: " + orderItemsTotal.getAmount() + "!");
         }
     }
 
@@ -103,17 +106,9 @@ public class Order extends AggregateRoot<OrderId> {
         }
     }
 
-
-
-    private void validateInitialOrder() {
-        if (orderStatus != null || getId() != null){
-            throw new OrderDomainException("Order is not in correct state for initialization");
-        }
-    }
-
     private void initializeOrderItems() {
         long itemId = 1;
-        for (OrderItem orderItem: items){
+        for (OrderItem orderItem: items) {
             orderItem.initializeOrderItem(super.getId(), new OrderItemId(itemId++));
         }
     }
@@ -130,37 +125,40 @@ public class Order extends AggregateRoot<OrderId> {
         failureMessages = builder.failureMessages;
     }
 
-
-    public List<String> getFailureMessages() {
-        return failureMessages;
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public OrderStatus getOrderStatus() {
-        return orderStatus;
-    }
-
-    public TrackingId getTrackingId() {
-        return trackingId;
-    }
-
-    public List<OrderItem> getItems() {
-        return items;
-    }
-
-    public Money getPrice() {
-        return price;
-    }
-
-    public StreetAddress getDeliveryAddress() {
-        return deliveryAddress;
+    public CustomerId getCustomerId() {
+        return customerId;
     }
 
     public RestaurantId getRestaurantId() {
         return restaurantId;
     }
 
-    public CustomerId getCustomerId() {
-        return customerId;
+    public StreetAddress getDeliveryAddress() {
+        return deliveryAddress;
+    }
+
+    public Money getPrice() {
+        return price;
+    }
+
+    public List<OrderItem> getItems() {
+        return items;
+    }
+
+    public TrackingId getTrackingId() {
+        return trackingId;
+    }
+
+    public OrderStatus getOrderStatus() {
+        return orderStatus;
+    }
+
+    public List<String> getFailureMessages() {
+        return failureMessages;
     }
 
     public static final class Builder {
@@ -175,10 +173,6 @@ public class Order extends AggregateRoot<OrderId> {
         private List<String> failureMessages;
 
         private Builder() {
-        }
-
-        public static Builder Builder() {
-            return new Builder();
         }
 
         public Builder orderId(OrderId val) {

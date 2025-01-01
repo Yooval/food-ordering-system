@@ -9,7 +9,13 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/infrastracture/kafka/kafka-module/pom.xml" />
+        <option value="$PROJECT_DIR$/infrastracture/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka/kafka-module/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka/pom.xml" />
         <option value="$PROJECT_DIR$/order-service/order-service/pom.xml" />
+        <option value="$PROJECT_DIR$/payment-service/payment-domain/payment-domain-service/pom.xml" />
+        <option value="$PROJECT_DIR$/payment-service/payment-domain/paymeny-application-service/pom.xml" />
         <option value="$PROJECT_DIR$/untitled/pom.xml" />
       </set>
     </option>

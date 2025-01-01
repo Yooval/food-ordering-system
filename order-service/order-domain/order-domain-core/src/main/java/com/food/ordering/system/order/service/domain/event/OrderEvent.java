@@ -22,4 +22,3 @@ public abstract class OrderEvent implements DomainEvent<Order> {
         return createdAt;
     }
 }
-}
