@@ -1,0 +1,17 @@
+C:\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\event\DomainEvent.java
+C:\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\entity\BaseEntity.java
+C:\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\BaseId.java
+C:\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\entity\AggregateRoot.java
+C:\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\PaymentOrderStatus.java
+C:\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\event\publisher\DomainEventPublisher.java
+C:\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\CustomerId.java
+C:\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\OrderStatus.java
+C:\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\DomainConstants.java
+C:\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\RestaurantId.java
+C:\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\Money.java
+C:\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\OrderId.java
+C:\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\PaymentStatus.java
+C:\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\RestaurantOrderStatus.java
+C:\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\exception\DomainException.java
+C:\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\OrderApprovalStatus.java
+C:\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\ProductId.java
